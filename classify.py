@@ -26,7 +26,7 @@ import cp
 class Classifier :
 
     def train(self,filename) :
-        data = pandas.read_csv(filename,  header=None)
+        data = pandas.read_csv("train.txt",  header=None)
         X_data, y_data = data[1], data[0]
 
         ### Process vocabulary
@@ -78,8 +78,8 @@ class Classifier :
         self.classifier =  skflow.TensorFlowEstimator(model_fn=rnn_model, n_classes=15, steps=1000, optimizer='Adam', learning_rate=0.01, continue_training=True)
         self.classifier.fit(X_data, y_data, logdir='/tmp/tf_examples/word_rnn')
 
-    def predict(self, filename):
-        data = pandas.read_csv(filename,  header=None)
+    def predict(self):
+        data = pandas.read_csv("testData.txt",  header=None)
         X_data= data[1]
         MAX_DOCUMENT_LENGTH = 20
 
@@ -142,7 +142,7 @@ class Classifier :
         f.close()
 #cha = cp.CP()
 #cha.generateTestData()
-c = Classifier()
-c.crossValidation("train.txt")
-#c.train("train.txt")
-#c.predict("testData.txt")
+#c = Classifier()
+#c.crossValidation("train.txt")
+#c.train()
+#c.predict()

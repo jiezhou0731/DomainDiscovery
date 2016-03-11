@@ -18,5 +18,5 @@ Run cp.generateTestData()
 
 ###Finally, train and run the model.
 c = Classifier()
-c.train("train.txt")
-c.predict("testData.txt")
+c.train()
+c.predict()
