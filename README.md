@@ -4,7 +4,7 @@ This machine learning tool is to rank a newly discovered website by relevance.
 
 ## Setup
 
-###First, install TensorFlow and SKFlow
+###First, install <a href="https://www.tensorflow.org/">TensorFlow</a> and <a href="https://github.com/tensorflow/skflow/tree/master/skflow">SKFlow </a>
 
 ###Second, prepare training set
 Put highly relevant websites into seedDomains.txt
